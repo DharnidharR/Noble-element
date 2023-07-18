@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main() {
+    int i, n, j, temp = 0, count;
+    printf("Array Size: ");
+    scanf("%d", &n);
+    printf("Enter %d array Elements: ", n);
+    int a[n];
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    
+    int p[n];
+    
+    for (i = 0; i < n; i++) {
+        count = 0;
+        for (j = 0; j < n; j++) {
+            if (a[i] < a[j]) {
+                count++;
+            }
+        }
+        p[i] = count;
+    }
+    
+    for (i = 0; i < n; i++) {
+        if (a[i] == p[i])
+            temp++;
+    }
+    
+    printf("%d", temp);
+}
